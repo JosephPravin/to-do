@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
-import Users from './components/users'
+import Users from './components/users';
+import AddUser from './components/addUser';
 
 class App extends Component {
   state = {
@@ -47,9 +48,9 @@ class App extends Component {
   };
 
   handleAddUser = user => {
-    console.log('New user added..');
+    console.log(`New user ${user} added..`);
     const users = [...this.state.users];
-    users.push({name: 'Paul', tasks: []})
+    users.push({name: user, tasks: []})
     this.setState({ users });
   }
 
@@ -65,7 +66,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <h2 className='alert alert-primary'>To Do app</h2>
-        <Users users={this.state.users} onAddUser={this.handleAddUser} onAddTask={this.handleAddTask}/>
+        <div className="row">
+          <div className="col-10"><Users users={this.state.users} onAddUser={this.handleAddUser} onAddTask={this.handleAddTask}/></div>
+          <div className="col-2"><AddUser onAddUser={this.handleAddUser}/></div>
+        </div>
       </React.Fragment>
     );
   }
