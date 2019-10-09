@@ -23,7 +23,6 @@ class AddUser extends Component {
                 onKeyDown={(e)=>{
                     if(e.key === 'Enter' || e.keyCode === 13) {
                         let user = document.getElementById("newUser").value;
-                        console.log(user);
                         if(user == null || user == undefined || user == '') return;
                         document.getElementById("newUser").value = '';
                         this.props.onAddUser(user.charAt(0).toUpperCase() + user.slice(1).toLowerCase());
