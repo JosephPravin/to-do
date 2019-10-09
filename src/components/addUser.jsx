@@ -23,8 +23,13 @@ class AddUser extends Component {
                 onKeyDown={(e)=>{
                     if(e.key === 'Enter' || e.keyCode === 13) {
                         let user = document.getElementById("newUser").value;
-                        if(user == null || user == undefined || user == '') return;
+
+                        // checks if name is empty or contains only spaces
+                        if(!user || !user.replace(/\s/g, '').length) return;
+
                         document.getElementById("newUser").value = '';
+
+                        // cleaning the name before adding to data store
                         this.props.onAddUser(user.charAt(0).toUpperCase() + user.slice(1).toLowerCase());
                     }
                 }}/>
