@@ -14,7 +14,7 @@ class List extends Component {
             />
             
             <button
-                onClick={this.addTask}
+                onClick={()=>this.props.onAddTask(this.props.name, {title: '', description: ''})}          
                 className="btn btn-sm btn-dark"
             >Add task</button>
           </React.Fragment>

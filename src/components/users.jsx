@@ -9,9 +9,12 @@ class Users extends Component {
             <div className="row">
                 {
                     users.map(user => (
-                        <User className="col-sm" name={user.name} tasks={user.tasks}></User>
+                        <User className="col-sm" name={user.name} tasks={user.tasks} onAddTask={this.props.onAddTask}></User>
                     ))
                 }  
+            </div>
+            <div className="row" onClick={this.props.onAddUser}>
+                Add new user
             </div>
         </div>
          );

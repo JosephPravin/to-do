@@ -8,7 +8,7 @@ class User extends Component {
         return ( 
             <div className={className}>
                 <h3><mark>{name}</mark></h3> 
-                <List tasks={tasks}></List>
+                <List tasks={tasks} name={name} onAddTask={this.props.onAddTask}></List>
             </div>
          );
     }

@@ -44,12 +44,28 @@ class App extends Component {
             }]
         },
     ]
-};
+  };
+
+  handleAddUser = user => {
+    console.log('New user added..');
+    const users = [...this.state.users];
+    users.push({name: 'Paul', tasks: []})
+    this.setState({ users });
+  }
+
+  handleAddTask = (user, task) => {
+    console.log(`Adding task ${task} for user ${user}`);
+    const users = [...this.state.users];
+    const index = users.findIndex(u=>u.name===user)
+    users[index].tasks.push(task);  
+    this.setState({users})
+  }
+
   render() { 
     return (
       <React.Fragment>
         <h2 className='alert alert-primary'>To Do app</h2>
-        <Users users={this.state.users}/>
+        <Users users={this.state.users} onAddUser={this.handleAddUser} onAddTask={this.handleAddTask}/>
       </React.Fragment>
     );
   }
