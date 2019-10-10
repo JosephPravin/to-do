@@ -2,37 +2,28 @@ import React, { Component } from 'react';
 
 class AddUser extends Component {
     
-    state= {
-        isHidden: true
+    constructor(props) {
+        super(props);
+        this.getUser = this.getUser.bind(this);
+    }
+
+    getUser() {
+        let user = window.prompt("Name")
+        if(!user) {
+            user = window.prompt("Name is required")
+        }
+        if(!user || !user.replace(/\s/g, '').length) return;
+        this.props.onAddUser(user.charAt(0).toUpperCase() + user.slice(1).toLowerCase());
     }
 
     render() { 
         return (
             <div>
                 <button
-                onClick={()=> { this.setState({isHidden: !this.state.isHidden}) }}
+                onClick={this.getUser}
                 className="btn btn-primary">
                     + Add new user
                 </button>
-
-                <input
-                id="newUser"
-                type="text"
-                placeholder="User name"
-                hidden={this.state.isHidden}
-                onKeyDown={(e)=>{
-                    if(e.key === 'Enter' || e.keyCode === 13) {
-                        let user = document.getElementById("newUser").value;
-
-                        // checks if name is empty or contains only spaces
-                        if(!user || !user.replace(/\s/g, '').length) return;
-
-                        document.getElementById("newUser").value = '';
-
-                        // cleaning the name before adding to data store
-                        this.props.onAddUser(user.charAt(0).toUpperCase() + user.slice(1).toLowerCase());
-                    }
-                }}/>
             </div>
          );
     }
