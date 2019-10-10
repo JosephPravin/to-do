@@ -14,13 +14,15 @@ class AddTask extends Component {
     getInput() {
         let title;
         let description;
-        while(!title) {
-            title = window.prompt('Title');
-        }
-        while(!description) {
+        
+        title = window.prompt('Title');
+        
+        if(!title) {
+            title = window.prompt('Title is required');
+        } else {
             description = window.prompt('Describe it!');
         }
-        
+        if(!title) return;
         this.props.onAddTask(this.props.name, {title: title, description: description});
     }
    
