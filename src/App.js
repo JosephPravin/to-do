@@ -9,41 +9,25 @@ class App extends Component {
             name: 'Joseph',
             tasks: [{
                     title: 'Button link inactive',
-                    description: 'Though the button shouldbe active, it is inactive for a while',
+                    description: 'Though home page button should be active, it is inactive on page load',
                 },
                 {
-                    title: 'Text overflowing title card',
+                    title: 'Text overflowing in title card',
                     description: 'Css changes to accomodate the text within the div space',
-                }, {
-                    title: 'Jenkins job for UI deployment failing',
-                    description: 'Jenkins job should be distributed on multiple nodes. Needs configuration changes',
                 },
             ]
         },
         {
-          name: 'Peter',
-          tasks: [{
-              title: 'Button link inactive',
-              description: 'Though the button shouldbe active, it is inactive for a while',
-          }, {
-            title: 'Button link inactive',
-            description: 'Though the button shouldbe active, it is inactive for a while',
+          name: 'Pravin',
+          tasks: [ {
+            title: 'Jenkins task',
+            description: 'Create a jenkins job for UI deployment in dev. Branch name should be parameterised',
         },]
-      },
-        {
-            name: 'Michael',
-            tasks: [{
-                title: 'Button link inactive',
-                description: 'Though the button shouldbe active, it is inactive for a while',
-            }, ]
         },
         {
-            name: 'George',
-            tasks: [{
-              title: 'Improvise sql connection',
-              description: 'Current sql implemention uses Dao. Instead modify it to use CRUDRepository'
-            }]
-        },
+          name: 'Rajaram',
+          tasks: []
+        }
     ]
   };
 
