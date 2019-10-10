@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './App.css';
 import Users from './components/users';
 import AddUser from './components/addUser';
+import NavBar from './components/navBar'
 
 class App extends Component {
   state = {
@@ -50,22 +51,16 @@ class App extends Component {
 
   render() { 
     return (
-      <React.Fragment>
-        <div className="row">
-          <div className="col">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <h2 className='alert alert-primary'>To Do app</h2> {" "}
-            <p style={{textAlign: "right"}}>
-            Number of users with tasks: <span className="badge badge-pill badge-primary">{this.state.users.filter(c => c.tasks.length > 0).length}{" "}</span>
-            </p>
-            </nav>
-          </div>
-        </div>
+      
+        <div>
+        <NavBar header="To Do app" users={this.state.users}></NavBar>
+       
         <div className="row">
           <div className="col-10"><Users users={this.state.users} onAddTask={this.handleAddTask}/></div>
-          <div className="col-2"><AddUser onAddUser={this.handleAddUser}/></div>
+          <div className="col-2" style={{paddingLeft: '0px', marginTop: '10px'}}><AddUser onAddUser={this.handleAddUser}/></div>
         </div>
-      </React.Fragment>
+        </div> 
+
     );
   }
 }

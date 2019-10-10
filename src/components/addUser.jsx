@@ -8,10 +8,10 @@ class AddUser extends Component {
 
     render() { 
         return (
-            <React.Fragment>
+            <div>
                 <button
                 onClick={()=> { this.setState({isHidden: !this.state.isHidden}) }}
-                className="btn btn-success">
+                className="btn btn-primary">
                     + Add new user
                 </button>
 
@@ -33,7 +33,7 @@ class AddUser extends Component {
                         this.props.onAddUser(user.charAt(0).toUpperCase() + user.slice(1).toLowerCase());
                     }
                 }}/>
-            </React.Fragment>
+            </div>
          );
     }
 }
