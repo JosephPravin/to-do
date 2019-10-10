@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import User from './user';
-import AddUser from './addUser';
 
 class Users extends Component {
 
@@ -11,7 +10,7 @@ class Users extends Component {
             <div className="row">
                 {
                     users.map(user => (
-                        <User className="col-sm" name={user.name} tasks={user.tasks} onAddTask={this.props.onAddTask}></User>
+                        <User className="col" name={user.name} tasks={user.tasks} onAddTask={this.props.onAddTask}></User>
                     ))
                 }  
             </div>

@@ -55,19 +55,30 @@ class App extends Component {
   }
 
   handleAddTask = (user, task) => {
-    console.log(`Adding task ${task} for user ${user}`);
     const users = [...this.state.users];
-    const index = users.findIndex(u=>u.name===user)
-    users[index].tasks.push(task);  
-    this.setState({users})
+    const index = users.findIndex(u=>u.name===user);
+    console.log(`Adding task ${task} for user ${user} at index ${index}`);
+    console.log(users[index].tasks);
+    users[index].tasks.push(task); 
+    console.log(users[index].tasks); 
+    this.setState({users: users})
   }
 
   render() { 
     return (
       <React.Fragment>
-        <h2 className='alert alert-primary'>To Do app</h2>
         <div className="row">
-          <div className="col-10"><Users users={this.state.users} onAddUser={this.handleAddUser} onAddTask={this.handleAddTask}/></div>
+          <div className="col">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <h2 className='alert alert-primary'>To Do app</h2> {" "}
+            <p style={{textAlign: "right"}}>
+            Number of users with tasks: <span className="badge badge-pill badge-primary">{this.state.users.filter(c => c.tasks.length > 0).length}{" "}</span>
+            </p>
+            </nav>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-10"><Users users={this.state.users} onAddTask={this.handleAddTask}/></div>
           <div className="col-2"><AddUser onAddUser={this.handleAddUser}/></div>
         </div>
       </React.Fragment>

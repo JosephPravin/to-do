@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
-import Cards from './cards'
+import Cards from './cards';
+import AddTask from './addTask'
 
 class List extends Component {
-      addTask = task => {
-        console.log('Adding new task...')
-      }
 
       render() {
         return (
           <React.Fragment>
+
             <Cards
             tasks={this.props.tasks}
             />
-            
-            <button
-                onClick={()=>this.props.onAddTask(this.props.name, {title: '', description: ''})}          
-                className="btn btn-sm btn-dark"
-            >Add task</button>
+             <AddTask key={this.props.name} name={this.props.name} onAddTask={this.props.onAddTask}/>
+
           </React.Fragment>
         );
       }
