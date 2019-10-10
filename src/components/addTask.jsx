@@ -1,36 +1,33 @@
 import React, { Component } from 'react';
-import AddTaskForm from './addTaskForm'
 
 class AddTask extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            showForm: false,
+            title: '',
+            description: '',
         };
+        this.getInput = this.getInput.bind(this);
+    }
+
+    getInput() {
+        let title;
+        let description;
+        while(!title) {
+            title = window.prompt('Title');
+        }
+        while(!description) {
+            description = window.prompt('Describe it!');
+        }
+        
+        this.props.onAddTask(this.props.name, {title: title, description: description});
     }
    
     render() {
-        if(!this.state.showForm){
-            return (
-                <React.Fragment>
-                    <button
-                    onClick={()=>{this.setState({showForm: !this.state.showForm})}}
-                    className="btn btn-sm btn-dark">Add task</button>
-                    {/* <AddTaskForm style={{display: !this.state.showForm ?'block':'none'}} onAddTask={this.props.onAddTask}/>            */}
-                </React.Fragment>
-             );
-        } else {
-            return (
-                <React.Fragment>
-                    <button
-                    onClick={()=>{this.setState({showForm: !this.state.showForm})}}
-                    className="btn btn-sm btn-dark">Add task</button>
-                    <AddTaskForm name={this.props.name} onAddTask={this.props.onAddTask}/>           
-                </React.Fragment>
-             );
-        }
-        
+        return(<React.Fragment>
+        <button className="btn btn-sm btn-dark" onClick={this.getInput}>Add task</button>
+        </React.Fragment>   )
     }
 }
  

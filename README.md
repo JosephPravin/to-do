@@ -15,7 +15,7 @@ You can add a new task to the user by clicking on `Add task` button at the respe
 
 ### Track number of users with active task
 
-One the page's top banner, you have a badge where the number of users with active tasks is monitored and displayed
+On the page's top banner, you have a badge where the number of users with active tasks is monitored and displayed
 
 ## Available Scripts
 
