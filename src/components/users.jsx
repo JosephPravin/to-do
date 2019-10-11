@@ -4,13 +4,13 @@ import User from './user';
 class Users extends Component {
 
     render() { 
-        const { users } = this.props;
+        const { users, onAddTask, onDeleteTask } = this.props;
         return ( 
         <div className="container">
             <div className="row">
                 {
                     users.map(user => (
-                        <User className="col" name={user.name} tasks={user.tasks} onAddTask={this.props.onAddTask}></User>
+                        <User className="col" name={user.name} tasks={user.tasks} onAddTask={onAddTask} onDeleteTask={onDeleteTask}></User>
                     ))
                 }  
             </div>
