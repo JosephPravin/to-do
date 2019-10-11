@@ -11,7 +11,7 @@ You can add a new user my clicking on the `+ Add new user` button on the right
 You can add a new task to the user by clicking on `Add task` button at the respective column.
 2 experiences are currently available. 
 
-[One](https://github.com/JosephPravin/to-do/tree/develop) using `prompt` method of windows object and [one](https://github.com/JosephPravin/to-do/tree/master) using an inplace form experience.
+[One](https://github.com/JosephPravin/to-do/tree/master) using `prompt` method of windows object and [one](https://github.com/JosephPravin/to-do/tree/master-two) using an inplace form experience.
 
 ### Track number of users with active task
 
