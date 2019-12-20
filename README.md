@@ -1,6 +1,6 @@
 ## About the application
 
-This web application is a minified version of tasks/to-do tracking app similar to jira. This has been developed using React and bootstrap for presentation.
+This web application is a minified version of tasks/to-do tracking app similar to trello. This has been developed using React and bootstrap for presentation.
 
 ### Add new user
 
