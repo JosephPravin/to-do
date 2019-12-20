@@ -11,11 +11,7 @@ class App extends Component {
             tasks: [{
                     title: 'Button link inactive',
                     description: 'Though home page button should be active, it is inactive on page load',
-                },
-                {
-                    title: 'Text overflowing in title card',
-                    description: 'Css changes to accomodate the text within the div space',
-                },
+                }
             ]
         },
         {
@@ -23,6 +19,9 @@ class App extends Component {
           tasks: [ {
             title: 'Jenkins task',
             description: 'Create a jenkins job for UI deployment in dev. Branch name should be parameterised',
+        },{
+            title: 'Text overflowing in title card',
+            description: 'Css changes to accomodate the text within the div space',
         },]
         },
         {
