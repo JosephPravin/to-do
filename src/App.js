@@ -6,29 +6,7 @@ import NavBar from './components/navBar'
 
 class App extends Component {
   state = {
-    users: [{
-            name: 'Joseph',
-            tasks: [{
-                    title: 'Button link inactive',
-                    description: 'Though home page button should be active, it is inactive on page load',
-                }
-            ]
-        },
-        {
-          name: 'Pravin',
-          tasks: [ {
-            title: 'Jenkins task',
-            description: 'Create a jenkins job for UI deployment in dev. Branch name should be parameterised',
-        },{
-            title: 'Text overflowing in title card',
-            description: 'Css changes to accomodate the text within the div space',
-        },]
-        },
-        {
-          name: 'Rajaram',
-          tasks: []
-        }
-    ]
+    users: []
   };
 
   handleAddUser = user => {
