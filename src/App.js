@@ -16,7 +16,6 @@ class App extends Component {
   };
 
   handleAddUser = user => {
-    console.log(`New user ${user} added..`);
     const users = [...this.state.users];
     users.push({id:users.length+1,name: user, tasks: []})
     this.setState({ users });
