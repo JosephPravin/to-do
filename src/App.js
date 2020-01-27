@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import './App.css';
 import Users from './components/users';
 import AddUser from './components/addUser';
 import NavBar from './components/navBar';
-import users from './data/users.json'
+import users from './data/users.json';
 
 class App extends Component {
-  state = {
-    users: Array
-  };
 
   constructor(props) {
     super(props);
@@ -24,6 +20,7 @@ class App extends Component {
   handleAddTask = (user, task) => {
     const users = [...this.state.users];
     const index = users.findIndex(u=>u.name===user);
+    task.status = "New";
     users[index].tasks.push(task);  
     this.setState({users: users})
   }

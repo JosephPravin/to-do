@@ -5,7 +5,8 @@
     "tasks": [
         {
             "title": "Button link inactive",
-            "description": "Though home page button should be active, it is inactive on page load"
+            "description": "Though home page button should be active, it is inactive on page load",
+            "status": "Done"
         }
     ]
     },
@@ -15,10 +16,12 @@
     "tasks": [
             {
                 "title": "Jenkins task",
-                "description": "Create a jenkins job for UI deployment in dev. Branch name should be parameterised"
+                "description": "Create a jenkins job for UI deployment in dev. Branch name should be parameterised",
+                "status": "In Progress"
             },{
                 "title": "Text overflowing in title card",
-                "description": "Css changes to accomodate the text within the div space"
+                "description": "Css changes to accomodate the text within the div space",
+                "status": "New"
             }
         ]
     },

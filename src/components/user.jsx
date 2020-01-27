@@ -7,7 +7,7 @@ class User extends Component {
         const {name, className, tasks, onAddTask, onDeleteTask} = this.props;
         return ( 
             <div className={className} style={{padding: "1em"}}>
-                <h3><mark>{name}</mark></h3> 
+                <h3>{name}</h3> 
                 <List tasks={tasks} name={name} onAddTask={onAddTask} onDeleteTask={onDeleteTask}></List>
             </div>
          );
