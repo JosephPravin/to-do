@@ -1,52 +1,52 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Users from './components/users';
 import AddUser from './components/addUser';
 import NavBar from './components/navBar';
-import users from './data/users.json';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { users };
-  };
-
-  handleAddUser = user => {
-    const users = [...this.state.users];
-    users.push({id:users.length+1,name: user, tasks: []})
-    this.setState({ users });
+  handleAddUser = u => {
+    this.props.dispatch({
+      type: "ADD_USER",
+      user: u
+    });
   }
 
-  handleAddTask = (user, task) => {
-    const users = [...this.state.users];
-    const index = users.findIndex(u=>u.name===user);
-    task.status = "New";
-    users[index].tasks.push(task);  
-    this.setState({users: users})
+  handleAddTask = (uid, t) => {
+    this.props.dispatch({
+      type: "ADD_TASK",
+      userId: uid,
+      task: t
+    });
   }
 
-  handleDeleteTask = (user, task) => {
-    const users = [...this.state.users];
-    const userIndex = users.findIndex(u=>u.name===user);
-    const taskIndex = users[userIndex].tasks.indexOf(users[userIndex].tasks.filter(t => t.title === task.title)[0]);
-    users[userIndex].tasks.splice(taskIndex, 1);
-    this.setState({users})
+  handleDeleteTask = (u, t) => {
+    this.props.dispatch({
+      type: "DELETE_TASK",
+      user: u,
+      task: t
+    });
   }
 
   render() {     
     return (
       
-        <div>
-        <NavBar header="To Do app" users={ this.state.users }></NavBar>
-       
-        <div className="row">
-          <div className="col-10"><Users users={this.state.users} onAddTask={this.handleAddTask} onDeleteTask={this.handleDeleteTask}/></div>
-          <div className="col-2" style={{paddingLeft: '0px', marginTop: '10px'}}><AddUser onAddUser={this.handleAddUser}/></div>
-        </div>
-        </div> 
+        <React.Fragment>
+          <NavBar header="To Do app" users={ this.props.users }></NavBar>
+        
+          <div className="row">
+            <div className="col-10"><Users users={this.props.users} onAddTask={this.handleAddTask} onDeleteTask={this.handleDeleteTask}/></div>
+            <div className="col-2" style={{paddingLeft: '0px', marginTop: '10px'}}><AddUser onAddUser={this.handleAddUser}/></div>
+          </div>
+        </React.Fragment> 
 
     );
   }
 }
- 
-export default App;
+
+const mapStateToProps = (state) => ({
+    users: state
+});
+
+export default connect(mapStateToProps)(App);

@@ -23,7 +23,7 @@ class AddTask extends Component {
             description = window.prompt('Describe it!');
         }
         if(!title) return;
-        this.props.onAddTask(this.props.name, {title: title, description: description});
+        this.props.onAddTask(this.props.id, {title: title, description: description});
     }
    
     render() {

@@ -10,7 +10,7 @@ class Users extends Component {
             <div className="row">
                 {
                     users.map(user => (
-                        <User key={user.id} className="col" name={user.name} tasks={user.tasks} onAddTask={onAddTask} onDeleteTask={onDeleteTask}></User>
+                        <User key={user.id} id ={user.id} className="col" name={user.name} tasks={user.tasks} onAddTask={onAddTask} onDeleteTask={onDeleteTask}></User>
                     ))
                 }  
             </div>
