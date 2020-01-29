@@ -28,6 +28,12 @@
     {
     "id":3,
     "name": "Rajaram",
-    "tasks": []
+    "tasks": [
+        {
+            "title": "Improvise sql connection",
+            "description": "Current sql implemention uses Dao. Instead modify it to use CRUDRepository",
+            "status": "New"
+          }
+    ]
     }
 ]
