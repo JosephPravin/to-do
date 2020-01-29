@@ -7,7 +7,7 @@ class Cards extends Component {
         return ( <div>
             {
                 tasks.map(task => (
-                    <Card task={task} onDeleteTask={onDeleteTask} name={name}></Card>
+                    <Card key={task.title} task={task} onDeleteTask={onDeleteTask} name={name}></Card>
                 ))
             }
         </div> );
